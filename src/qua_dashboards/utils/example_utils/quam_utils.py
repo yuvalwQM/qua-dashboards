@@ -49,8 +49,8 @@ def setup_DC_channel(
         sticky=StickyChannelAddon(duration=1_000, digital=False),  # For DC offsets
         attenuation = 10,
     )
-    qdac_spec = QdacSpec(qdac_output_port = qdac_port)
-    channel.qdac_spec = qdac_spec
+    qdac_spec = QdacSpec(output_port = qdac_port)
+    channel.dac_spec = qdac_spec
     if qdac_port is None:
         channel.offset_parameter = None
     return channel
